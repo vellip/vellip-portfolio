@@ -1,0 +1,58 @@
+@import '../style_base';
+
+.intro {
+  margin-top: 100px;
+  margin-bottom: 80px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 210px;
+    margin-bottom: 100px;
+  }
+
+  .container  {
+    position: relative;
+  }
+}
+
+.intro--noMargin {
+  margin: 0;
+}
+
+.intro--big {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 380px;
+  margin-top: 0;
+  margin-bottom: 80px;
+
+  @include media-breakpoint-up(sm) {
+    height: 480px;
+    margin-bottom: 100px;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 580px;
+    margin-bottom: 150px;
+  }
+}
+
+.intro__pre {
+  margin-top: 15vh;
+  margin-bottom: 0;
+}
+
+.intro__title {
+  line-height: 1.04;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.intro__title,
+.intro__pre {
+  font-size: 1.778rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3.429rem;
+  }
+}

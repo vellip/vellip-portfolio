@@ -1,14 +1,12 @@
+import '../global.scss'
 import React from 'react'
 import {graphql} from 'gatsby'
-import {
-  mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
+import {mapEdgesToNodes, filterOutDocsWithoutSlugs, filterOutDocsPublishedInTheFuture} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Intro from '../components/intro'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -72,8 +70,8 @@ const IndexPage = props => {
   const site = (data || {}).site
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture)
+        .filter(filterOutDocsWithoutSlugs)
+        .filter(filterOutDocsPublishedInTheFuture)
     : []
 
   if (!site) {
@@ -86,7 +84,7 @@ const IndexPage = props => {
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
+        <Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />
       </Container>
     </Layout>
   )

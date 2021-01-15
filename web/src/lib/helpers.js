@@ -4,6 +4,10 @@ export function cn (...args) {
   return args.filter(Boolean).join(' ')
 }
 
+export function rnItem (items) {
+  return items[Math.floor(Math.random() * items.length)]
+}
+
 export function mapEdgesToNodes (data) {
   if (!data.edges) return []
   return data.edges.map(edge => edge.node)
