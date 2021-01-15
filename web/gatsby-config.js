@@ -39,5 +39,13 @@ module.exports = {
       },
       __key: 'images',
     },
+    {
+      resolve: `gatsby-plugin-subfont`,
+      options: {
+        fallback: false,
+        inlineFonts: true,
+        fontDisplay: 'optional',
+      },
+    },
   ],
 }
