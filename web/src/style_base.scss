@@ -1,0 +1,53 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/variables';
+
+$primary: #ffd91a;
+$secondary: #1f2233;
+$accent: #e61700;
+
+$body-bg: #fafafa;
+$body-color: $secondary;
+
+$link-color: $secondary;
+$link-decoration: underline;
+
+$grid-breakpoints: (
+xs: 0,
+sm: 576px,
+md: 768px,
+lg: 1024px,
+xl: 1300px
+);
+
+$grid-gutter-width: 24px;
+
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 4.5;
+$h2-font-size: $font-size-base * 2.25;
+
+$headings-font-weight: bold;
+
+@mixin hover-line {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    background: #333;
+    transition: transform 0.3s;
+    transform-origin: 0 100%;
+    transform: scaleX(0);
+  }
+
+  &:hover:before {
+    transform: scaleX(1);
+  }
+}
