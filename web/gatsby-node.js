@@ -5,11 +5,11 @@ const {isFuture} = require('date-fns')
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-async function createProjectPages (graphql, actions) {
+async function createProjectPages(graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
-      allSanitySampleProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
+      allSanityProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
         edges {
           node {
             id
@@ -25,7 +25,7 @@ async function createProjectPages (graphql, actions) {
 
   if (result.errors) throw result.errors
 
-  const projectEdges = (result.data.allSanitySampleProject || {}).edges || []
+  const projectEdges = (result.data.allSanityProject || {}).edges || []
 
   projectEdges
     .filter(edge => !isFuture(edge.node.publishedAt))
@@ -37,7 +37,7 @@ async function createProjectPages (graphql, actions) {
       createPage({
         path,
         component: require.resolve('./src/templates/project.js'),
-        context: {id}
+        context: {id},
       })
     })
 }

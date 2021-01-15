@@ -15,7 +15,7 @@ export const query = graphql`
       description
       keywords
     }
-    projects: allSanitySampleProject(
+    projects: allSanityProject(
       limit: 6
       sort: {fields: [publishedAt], order: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
@@ -73,7 +73,7 @@ const IndexPage = props => {
         .filter(filterOutDocsWithoutSlugs)
         .filter(filterOutDocsPublishedInTheFuture)
     : []
-
+  console.log(projectNodes)
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
