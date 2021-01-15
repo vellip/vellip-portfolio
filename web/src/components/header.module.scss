@@ -1,0 +1,47 @@
+@use '../style_base' as *;
+
+.header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  padding: 1.4rem 10px 0;
+
+  @include media-breakpoint-up(xl) {
+    padding: 1.4rem 40px 0;
+  }
+}
+
+.header__list {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__list-item {
+  width: 85px;
+  text-align: right;
+}
+
+.header__link {
+  color: $secondary;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @include hover-line();
+}
+
+.header__list-item--home {
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
+  width: auto;
+}
+
+.header__link--active {
+  border-bottom: 2px solid #333;
+}
