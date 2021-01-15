@@ -29,6 +29,19 @@ img {
   height: auto;
 }
 
-.container--align {
-  position: relative;
+html,
+body,
+body > div,
+body > div > div {
+
+  height: 100%;
+}
+
+body > div > div  {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
 }
