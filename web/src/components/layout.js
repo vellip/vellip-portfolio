@@ -44,17 +44,19 @@ const textMe = rnItem(['Schreib mir mal.', 'Noch Fragen?', 'Lass uns zusammenarb
 const callMe = rnItem(['Bisschen plaudern?', 'Lust zu quatschen?', 'Noch Fragen?'])
 
 const Footer = () => (
-  <footer className={fStyles.footer}>
+  <footer className={fStyles.footer} itemScope itemType="http://schema.org/Person">
     <Container>
       <div className={fStyles.footer__section}>
         <h2 className={fStyles.footer__label}>{textMe}</h2>
-        <a href="mailto:mail@vellip.de?subject=Hallöchen" className={fStyles.footer__value}>
+        <a href="mailto:mail@vellip.de?subject=Hallöchen" itemProp="email" className={fStyles.footer__value}>
           mail@vellip.de
         </a>
       </div>
       <div className={fStyles.footer__section}>
         <h2 className={fStyles.footer__label}>{callMe}</h2>
-        <p className={fStyles.footer__value}>+49 (0)170 38 72 190</p>
+        <a href="tel:+491703872190" itemProp="telephone" className={fStyles.footer__value}>
+          +49 (0)170 38 72 190
+        </a>
       </div>
       <div className={cn(fStyles.footer__section, fStyles.footer__sectionRight)}>
         <nav>
@@ -81,6 +83,15 @@ const Footer = () => (
             </li>
           </ul>
           <Link to="/page/impressum-datenschutz">Impressum & Datenschutz</Link>
+          <p className={fStyles.footer__valueSmall}>
+            <span itemProp="name">Philipp Veller</span> <br />
+            <span itemProp="jobTitle">Webentwickler</span> <br />
+            <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+              <span itemProp="streetAddress">Berliner Str 66</span> <br />
+              <span itemProp="postalCode">13189</span>&nbsp;
+              <span itemProp="addressLocality">Berlin</span>
+            </span>
+          </p>
         </nav>
       </div>
     </Container>
