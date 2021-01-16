@@ -5,9 +5,6 @@ export default {
   name: 'project',
   title: 'Project',
   type: 'document',
-  fieldsets: [
-    {name: 'meta', title: 'Meta data'}
-  ],
   fields: [
     {
       name: 'title',
@@ -36,18 +33,6 @@ export default {
       type: 'simplePortableText',
     },
     {
-      name: 'startedAt',
-      title: 'Started at',
-      type: 'datetime',
-      fieldset: 'meta'
-    },
-    {
-      name: 'endedAt',
-      title: 'Ended at',
-      type: 'datetime',
-      fieldset: 'meta'
-    },
-    {
       name: 'mainImage',
       title: 'Main image',
       type: 'figure',
@@ -70,22 +55,10 @@ export default {
       type: 'projectPortableText',
     },
     {
-      name: 'link',
-      title: 'Link',
-      type: 'url',
-      fieldset: 'meta'
-    },
-    {
-      name: 'agency',
-      title: 'Agency',
-      type: 'string',
-      fieldset: 'meta'
-    },
-    {
-      name: 'client',
-      title: 'Client',
-      type: 'string',
-      fieldset: 'meta'
+      title: 'Facts',
+      name: 'facts',
+      type: 'array',
+      of: [{type: 'fact'}]
     },
     {
       name: 'relatedProjects',

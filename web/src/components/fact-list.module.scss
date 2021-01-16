@@ -1,0 +1,25 @@
+@import "../style_base";
+$gutter: 24px;
+
+.fact-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+
+.fact-list__term {
+  font-weight: normal;
+  padding-right: $gutter/2;
+  opacity: 0.5;
+  flex: 0 0 100px;
+
+  @include media-breakpoint-up(md) {
+    text-align: right;
+  }
+}
+
+.fact-list__fact {
+  padding-left: $gutter/2;
+  flex: 0 0 calc(100% - 100px);
+}

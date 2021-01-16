@@ -1,0 +1,42 @@
+@import "../style_base";
+
+
+
+.project-detail__intro {
+  margin-bottom: 80px;
+
+  &:before {
+    content: '____';
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 120px;
+  }
+}
+
+.project-detail__body {
+  margin-bottom: 60px;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 120px;
+  }
+
+  h2 {
+    margin-top: 70px;
+    margin-bottom: 15px;
+  }
+
+  iframe {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.project-detail__facts {
+  margin-bottom: 20px;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}

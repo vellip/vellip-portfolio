@@ -5,11 +5,11 @@ import clientConfig from '../../client-config'
 
 import styles from './figure.module.scss'
 
-
 export default ({node, options, className}) => {
   if (!node.asset) {
     return null
   }
+  console.log(node)
 
   const fluidProps = getFluidGatsbyImage(node.asset._id, {maxWidth: 675, ...(options || {})}, clientConfig.sanity)
 

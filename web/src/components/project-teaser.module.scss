@@ -5,6 +5,7 @@ $offset: 15px;
 .project-teaser--full {
   position: relative;
   padding-top: 1.8rem;
+  margin-bottom: 6.25rem;
 
   .project-teaser__image {
     width: 100%;
@@ -107,20 +108,13 @@ $overlap: 30px;
     margin-bottom: 0;
   }
 
-  &:before {
-    content: '';
-    display: block;
-    padding-top: 100%;
-  }
-
-  .project-teaser__image {
+  figure {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
 
   .project-teaser__link {
-    position: absolute;
     width: 100%;
     bottom: 0;
     top: 0;
@@ -135,6 +129,7 @@ $overlap: 30px;
       top: 0;
       width: 100%;
       height: 100%;
+      z-index: 1;
     }
 
     &:focus .project-teaser__text p,
@@ -149,6 +144,7 @@ $overlap: 30px;
     right: 2.5rem;
     left: 2.5rem;
     bottom: 2.5rem;
+    z-index: 2;
   }
 
   .project-teaser__text {

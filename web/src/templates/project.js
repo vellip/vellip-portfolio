@@ -4,12 +4,18 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import BlockContent from '../components/block-content'
+import styles from './project.module.scss'
+import BlockText from '../components/block-text'
+import FactList from '../components/fact-list'
+import Intro from '../components/intro'
+import {cn} from '../lib/helpers'
+import ProjectImages from '../components/project-images'
 
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {
     project: sanityProject(id: {eq: $id}) {
       id
-      publishedAt
       categories {
         _id
         title
@@ -21,7 +27,13 @@ export const query = graphql`
           current
         }
       }
-      mainImage {
+      facts {
+        title
+        value
+        link
+        _key
+      }
+      images {
         crop {
           _key
           _type
@@ -42,12 +54,12 @@ export const query = graphql`
           _id
         }
         alt
+        caption
+        _key
       }
       title
-      slug {
-        current
-      }
       _rawBody
+      _rawExcerpt
     }
   }
 `
@@ -66,6 +78,23 @@ const ProjectTemplate = props => {
           <GraphQLErrorList errors={errors} />
         </Container>
       )}
+      <Container className={styles.projectDetail__body} TagName="article">
+        <Intro title={project.title} />
+        <div className={cn('row', styles.projectDetail__intro)}>
+          <div className="offset-lg-1 col-lg-4 order-md-first col-md-6">
+            <BlockText blocks={project._rawExcerpt} />
+          </div>
+          <aside className="col-lg-3 offset-lg-1 order-first col-md-6 project-detail__facts">
+            <FactList facts={project.facts} />
+          </aside>
+        </div>
+        <ProjectImages images={project.images} />
+        <div className="row">
+          <div className="offset-lg-1 col-lg-7">
+            <BlockContent blocks={project._rawBody} />
+          </div>
+        </div>
+      </Container>
     </Layout>
   )
 }

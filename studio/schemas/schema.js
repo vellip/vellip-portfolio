@@ -13,6 +13,7 @@ import siteSettings from "./documents/siteSettings";
 // Object types
 import bioPortableText from "./objects/bioPortableText";
 import figure from "./objects/figure";
+import fact from "./objects/fact";
 import projectMember from "./objects/projectMember";
 import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
@@ -29,6 +30,7 @@ export default createSchema({
     bioPortableText,
     figure,
     projectMember,
+    fact,
     projectPortableText,
     simplePortableText,
     // The following are document types which will appear
