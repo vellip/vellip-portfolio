@@ -71,6 +71,14 @@ $overlap: 30px;
 
   .project-teaser__link {
     margin-left: auto;
+
+    @include media-breakpoint-up(md) {
+      &:hover .project-teaser__body,
+      &:focus .project-teaser__body {
+        box-shadow: -$offset $offset 0 0 $primary;
+        transform: translate($offset, -$offset);
+      }
+    }
   }
 
   .project-teaser__body {
