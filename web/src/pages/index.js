@@ -7,6 +7,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Intro from '../components/intro'
+import ProjectTeaser from '../components/project-teaser'
+import project from '../../../studio/schemas/documents/project'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -86,6 +88,11 @@ const IndexPage = props => {
       <Container>
         <Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />
       </Container>
+      {
+        projectNodes && projectNodes.map((item, index) => (
+          <ProjectTeaser align={index % 2 === 0 ? 'left' : 'right'} project={item}/>
+        ))
+      }
     </Layout>
   )
 }
