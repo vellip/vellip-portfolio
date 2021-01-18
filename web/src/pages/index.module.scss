@@ -1,0 +1,71 @@
+@import "../style_base";
+
+:global .shape--triangle {
+  width: 300px;
+  height: 250px;
+  left: 60%;
+  top: -20px;
+  transform-origin: center top;
+
+  @include media-breakpoint-up(sm) {
+    width: 450px;
+    height: 350px;
+    top: -45px;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 520px;
+    height: 440px;
+    left: 25%;
+    top: -88px;
+  }
+}
+
+:global .shape--circle {
+  width: 300px;
+  height: 300px;
+  bottom: -200px;
+  left: -80px;
+
+  @include media-breakpoint-up(md) {
+    width: 460px;
+    height: 460px;
+    bottom: -260px;
+    left: -40px;
+  }
+}
+
+:global .shape--rectangle {
+  width: 200px;
+  height: 50px;
+  left: 0;
+  top: 180px;
+  transform-origin: center bottom;
+
+  @include media-breakpoint-up(sm) {
+    top: 220px;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 320px;
+    height: 80px;
+    top: 250px;
+  }
+}
+
+:global .shape--squiggle {
+  width: 1779px;
+  stroke-dashoffset: 1779px;
+  height: 170px;
+  left: 60%;
+  bottom: -40px;
+
+  @include media-breakpoint-up(sm) {
+    left: 45%;
+  }
+
+  @include media-breakpoint-up(md) {
+    left: 60%;
+    bottom: -70px;
+  }
+}

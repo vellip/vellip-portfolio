@@ -1,0 +1,47 @@
+@import '../style_base';
+
+.shape {
+  will-change: transform;
+}
+
+.shape,
+.shape svg {
+  z-index: -1;
+  position: absolute;
+}
+
+:global .shape--squiggle {
+  stroke-dasharray: 100%;
+  will-change: stroke-dashoffset;
+}
+
+.shapesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.shapesWrapper__alignedLayer {
+  position: relative;
+}
+
+// used to keep the width of shapesWrapper equal to the text
+.shapesWrapper__clone {
+  visibility: hidden;
+}
+
+.shapesWrapper__fixedLayer {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  max-width: calc(100% - 40px);
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    max-width: calc(100% - 120px);
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: calc(100% - 240px);
+  }
+}

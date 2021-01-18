@@ -8,7 +8,8 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Intro from '../components/intro'
 import ProjectTeaser from '../components/project-teaser'
-import project from '../../../studio/schemas/documents/project'
+import {Shape, ShapeWrapper} from '../components/shape'
+import './index.module.scss'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -86,13 +87,16 @@ const IndexPage = props => {
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
+        <ShapeWrapper container clone={<Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />}>
+          <Shape shape="circle" />
+          <Shape shape="triangle" />
+          <Shape shape="squiggle" />
+        </ShapeWrapper>
+        <Shape shape="rectangle" />
         <Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />
       </Container>
-      {
-        projectNodes && projectNodes.map((item, index) => (
-          <ProjectTeaser align={index % 2 === 0 ? 'left' : 'right'} project={item}/>
-        ))
-      }
+      {projectNodes &&
+        projectNodes.map((item, index) => <ProjectTeaser align={index % 2 === 0 ? 'left' : 'right'} project={item} />)}
     </Layout>
   )
 }
