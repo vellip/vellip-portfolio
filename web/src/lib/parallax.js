@@ -81,8 +81,13 @@ class Parallax {
 
 const service = new ParallaxService()
 
-export default function(transformKeys) {
-  return function(ref) {
-    service.initParallax(ref, transformKeys)
-  }
+export default {
+  init: function(transformKeys) {
+    return function(ref) {
+      service.initParallax(ref, transformKeys)
+    }
+  },
+  remove: function() {
+    service.scrollHandlers = []
+  },
 }

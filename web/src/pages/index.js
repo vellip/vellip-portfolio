@@ -1,5 +1,5 @@
 import '../global.scss'
-import React from 'react'
+import React, {useEffect} from 'react'
 import {graphql} from 'gatsby'
 import {mapEdgesToNodes, filterOutDocsWithoutSlugs, filterOutDocsPublishedInTheFuture} from '../lib/helpers'
 import Container from '../components/container'
@@ -71,6 +71,12 @@ const IndexPage = props => {
     )
   }
 
+  useEffect(() => {
+    return () => {
+      parallax.remove()
+    }
+  }, [])
+
   const site = (data || {}).site
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
@@ -90,22 +96,22 @@ const IndexPage = props => {
         <ShapeWrapper container clone={<Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />}>
           <Shape
             shape="circle"
-            ref={parallax([
+            ref={parallax.init([
               {speed: 17, value: 'translateX(-%dpx)', delay: 90},
               {speed: 7, value: 'translateY(%dpx)', delay: 90},
             ])}
           />
-          <Shape shape="triangle" ref={parallax([{speed: 3, value: 'rotate(-%ddeg)', delay: 30, end: 180}])} />
+          <Shape shape="triangle" ref={parallax.init([{speed: 3, value: 'rotate(-%ddeg)', delay: 30, end: 180}])} />
           <Shape
             shape="squiggle"
-            ref={parallax([
+            ref={parallax.init([
               {property: 'stroke-dashoffset', speed: 20, value: '%dpx', start: 1779, end: 2740, delay: 100},
             ])}
           />
         </ShapeWrapper>
         <Shape
           shape="rectangle"
-          ref={parallax([
+          ref={parallax.init([
             {speed: 0.5, value: 'scaleY(%d)', start: 1, end: 3},
             {speed: 6, value: 'translateY(-%dpx)', end: 70, delay: 50},
             {speed: 15, value: 'translateX(-%dpx)', delay: 170},
