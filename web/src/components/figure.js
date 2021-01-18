@@ -15,7 +15,7 @@ export default ({node, options, className}) => {
 
   return (
     <figure className={styles.root}>
-      <Img fluid={fluidProps} alt={node.alt} className={className} />
+      <Img fluid={fluidProps} loading="lazy" backgroundColor="#000000" alt={node.alt} className={className} />
       {node.caption && <figcaption>{node.caption}</figcaption>}
     </figure>
   )

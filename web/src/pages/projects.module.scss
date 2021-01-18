@@ -1,0 +1,34 @@
+@import "src/style_base";
+
+.shape--triangle {
+  height: auto;
+  position: absolute;
+  left: 60%;
+  top: 10vh;
+  transform-origin: 100% 100%;
+}
+
+.shape--rectangle {
+  width: 100vw;
+  height: 220px;
+  position: absolute;
+  top: 160px;
+  left: 10px;
+
+  @include media-breakpoint-up(sm) {
+    left: 40px;
+  }
+
+  @include media-breakpoint-up(md) {
+    top: 830px;
+    left: 80px;
+  }
+}
+
+.shape--circle {
+  height: 700px;
+  width: 700px;
+  position: absolute;
+  top: 0;
+  left: 80%;
+}

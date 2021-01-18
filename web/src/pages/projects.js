@@ -1,11 +1,14 @@
 import '../global.scss'
-import React from 'react'
+import React, {useEffect} from 'react'
 import Layout from '../components/layout'
 import {graphql} from 'gatsby'
 import Intro from '../components/intro'
 import Container from '../components/container'
 import ProjectTeaser from '../components/project-teaser'
 import {mapEdgesToNodes} from '../lib/helpers'
+import {Shape, ShapeWrapper} from '../components/shape'
+import styles from './projects.module.scss'
+import parallax from '../lib/parallax'
 
 export const query = graphql`
   query ProjectsPageQuery {
@@ -57,9 +60,29 @@ export const query = graphql`
 
 const ProjectsPage = ({data}) => {
   const projects = data?.projects?.edges?.length && mapEdgesToNodes(data.projects)
+
+  useEffect(() => {
+    return () => {
+      parallax.remove()
+    }
+  }, [])
+
   return (
     <Layout>
       <Container>
+        <Shape
+          shape="circle"
+          className={styles.shapeCircle}
+          ref={parallax.init([
+            {speed: 17, value: 'translateX(-%dpx)', delay: 90},
+            {speed: 7, value: 'translateY(%dpx)', delay: 90},
+          ])}
+        />
+        <Shape
+          shape="rectangle"
+          className={styles.shapeRectangle}
+          ref={parallax.init([{speed: 3, value: 'translateY(-%dpx)', delay: 100}])}
+        />
         <Intro title="Projekte und <br/> Case Studies" />
         <div className="row">
           {projects &&

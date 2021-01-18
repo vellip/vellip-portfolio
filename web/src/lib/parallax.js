@@ -84,7 +84,7 @@ const service = new ParallaxService()
 export default {
   init: function(transformKeys) {
     return function(ref) {
-      service.initParallax(ref, transformKeys)
+      if (ref) service.initParallax(ref, transformKeys)
     }
   },
   remove: function() {

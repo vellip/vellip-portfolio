@@ -9,7 +9,7 @@ import Layout from '../containers/layout'
 import Intro from '../components/intro'
 import ProjectTeaser from '../components/project-teaser'
 import {Shape, ShapeWrapper} from '../components/shape'
-import './index.module.scss'
+import styles from './index.module.scss'
 import parallax from '../lib/parallax'
 
 export const query = graphql`
@@ -96,14 +96,20 @@ const IndexPage = props => {
         <ShapeWrapper container clone={<Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />}>
           <Shape
             shape="circle"
+            className={styles.shapeCircle}
             ref={parallax.init([
               {speed: 17, value: 'translateX(-%dpx)', delay: 90},
               {speed: 7, value: 'translateY(%dpx)', delay: 90},
             ])}
           />
-          <Shape shape="triangle" ref={parallax.init([{speed: 3, value: 'rotate(-%ddeg)', delay: 30, end: 180}])} />
+          <Shape
+            className={styles.shapeTriangle}
+            shape="triangle"
+            ref={parallax.init([{speed: 3, value: 'rotate(-%ddeg)', delay: 30, end: 180}])}
+          />
           <Shape
             shape="squiggle"
+            className={styles.shapeSquiggle}
             ref={parallax.init([
               {property: 'stroke-dashoffset', speed: 20, value: '%dpx', start: 1779, end: 2740, delay: 100},
             ])}
@@ -111,6 +117,7 @@ const IndexPage = props => {
         </ShapeWrapper>
         <Shape
           shape="rectangle"
+          className={styles.shapeRectangle}
           ref={parallax.init([
             {speed: 0.5, value: 'scaleY(%d)', start: 1, end: 3},
             {speed: 6, value: 'translateY(-%dpx)', end: 70, delay: 50},

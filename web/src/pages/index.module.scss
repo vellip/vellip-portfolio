@@ -1,6 +1,6 @@
 @import "../style_base";
 
-:global .shape--triangle {
+.shape--triangle {
   width: 300px;
   height: 250px;
   left: 60%;
@@ -21,7 +21,7 @@
   }
 }
 
-:global .shape--circle {
+.shape--circle {
   width: 300px;
   height: 300px;
   bottom: -200px;
@@ -35,7 +35,7 @@
   }
 }
 
-:global .shape--rectangle {
+.shape--rectangle {
   width: 200px;
   height: 50px;
   left: 0;
@@ -53,7 +53,7 @@
   }
 }
 
-:global .shape--squiggle {
+.shape--squiggle {
   width: 1779px;
   stroke-dashoffset: 1779px;
   height: 170px;

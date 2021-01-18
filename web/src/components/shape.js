@@ -3,8 +3,8 @@ import React from 'react'
 import styles from './shape.module.scss'
 import {cn} from '../lib/helpers'
 
-export const Shape = React.forwardRef(({shape, classes}, ref) => (
-  <svg className={cn(styles.shape, shape && `shape--${shape}`, classes)} ref={ref} aria-hidden>
+export const Shape = React.forwardRef(({shape, className}, ref) => (
+  <svg className={cn(styles.shape, shape && `shape--${shape}`, className)} ref={ref} aria-hidden>
     <use xlinkHref={require('../images/' + shape + '.svg') + '#icon'} />
   </svg>
 ))
