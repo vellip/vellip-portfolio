@@ -10,6 +10,7 @@ import Intro from '../components/intro'
 import ProjectTeaser from '../components/project-teaser'
 import {Shape, ShapeWrapper} from '../components/shape'
 import './index.module.scss'
+import parallax from '../lib/parallax'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -76,7 +77,6 @@ const IndexPage = props => {
         .filter(filterOutDocsWithoutSlugs)
         .filter(filterOutDocsPublishedInTheFuture)
     : []
-  console.log(projectNodes)
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -88,11 +88,29 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
         <ShapeWrapper container clone={<Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />}>
-          <Shape shape="circle" />
-          <Shape shape="triangle" />
-          <Shape shape="squiggle" />
+          <Shape
+            shape="circle"
+            ref={parallax([
+              {speed: 17, value: 'translateX(-%dpx)', delay: 90},
+              {speed: 7, value: 'translateY(%dpx)', delay: 90},
+            ])}
+          />
+          <Shape shape="triangle" ref={parallax([{speed: 3, value: 'rotate(-%ddeg)', delay: 30, end: 180}])} />
+          <Shape
+            shape="squiggle"
+            ref={parallax([
+              {property: 'stroke-dashoffset', speed: 20, value: '%dpx', start: 1779, end: 2740, delay: 100},
+            ])}
+          />
         </ShapeWrapper>
-        <Shape shape="rectangle" />
+        <Shape
+          shape="rectangle"
+          ref={parallax([
+            {speed: 0.5, value: 'scaleY(%d)', start: 1, end: 3},
+            {speed: 6, value: 'translateY(-%dpx)', end: 70, delay: 50},
+            {speed: 15, value: 'translateX(-%dpx)', delay: 170},
+          ])}
+        />
         <Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />
       </Container>
       {projectNodes &&
