@@ -5,10 +5,6 @@
 .project-detail__intro {
   margin-bottom: 80px;
 
-  &:before {
-    content: '____';
-  }
-
   @include media-breakpoint-up(md) {
     margin-bottom: 120px;
   }
@@ -24,6 +20,10 @@
   h2 {
     margin-top: 70px;
     margin-bottom: 15px;
+  }
+
+  h2:first-child {
+    margin-top: 0;
   }
 
   iframe {

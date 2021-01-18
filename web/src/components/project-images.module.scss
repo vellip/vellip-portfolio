@@ -1,15 +1,10 @@
 @import "../style_base";
 
-.project-images {
-  margin: 0 0 20px;
-
-  @include media-breakpoint-up(md) {
-    margin: 0 0 60px;
-  }
-}
-
 .project-images__image {
   box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.2);
+}
+
+.project-images__figure {
   margin-bottom: 20px;
 
   @include media-breakpoint-up(md) {
