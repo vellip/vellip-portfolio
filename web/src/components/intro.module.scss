@@ -3,14 +3,11 @@
 .intro {
   margin-top: 100px;
   margin-bottom: 80px;
+  position: relative;
 
   @include media-breakpoint-up(md) {
     margin-top: 210px;
     margin-bottom: 100px;
-  }
-
-  .container  {
-    position: relative;
   }
 }
 
@@ -46,13 +43,4 @@
   line-height: 1.04;
   position: relative;
   margin-bottom: 0;
-}
-
-.intro__title,
-.intro__pre {
-  font-size: 1.778rem;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 3.429rem;
-  }
 }

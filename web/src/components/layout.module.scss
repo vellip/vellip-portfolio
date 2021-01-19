@@ -43,3 +43,7 @@ body > div > div  {
 main {
   flex-grow: 1;
 }
+
+:global .muted {
+  opacity: 0.7;
+}

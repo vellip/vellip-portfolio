@@ -1,0 +1,137 @@
+@import "src/style_base";
+
+$rectangle-height: 170px;
+$rectangle-width: 60vw;
+
+.shape--rectangle--long {
+  width: $rectangle-width;
+  height: $rectangle-height;
+  top: -10px;
+  left: -10px;
+
+  @include media-breakpoint-up(lg) {
+    width: 770px;
+  }
+}
+
+.shape--rectangle--dynamicWidth {
+  left: -20px;
+  width: calc(1.525rem + 55vw);
+  height: calc(1.525rem + 19vw);
+
+  @include media-breakpoint-up(sm) {
+    width: calc(1.525rem + 51.4vw);
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 680px;
+    height: $rectangle-height + 40px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 760px;
+    height: $rectangle-height + 40px;
+  }
+}
+
+.shape--rectangle--small {
+  width: $rectangle-width / 2;
+  height: $rectangle-height;
+  left: calc(#{$rectangle-width} + 20px);
+  top: -10px;
+
+  @include media-breakpoint-up(lg) {
+    width: $rectangle-width / 4;
+  }
+}
+
+.shape--triangle {
+  width: 150px;
+  height: 135px;
+  left: calc(1.525rem + 75vw);
+  top: 200px;
+  z-index: -2;
+  position: fixed;
+
+  @include media-breakpoint-up(md) {
+    left:750px;
+    top: 250px;
+    width: 350px;
+    height: 300px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    left: 950px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    left: 1050px;
+  }
+}
+
+.about__head {
+  display: block;
+  margin-top: 100px;
+  margin-bottom: 80px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 210px;
+    margin-bottom: 100px;
+  }
+}
+
+.about__image {
+  width: 150px;
+  height: auto;
+  position: absolute;
+  z-index: -3;
+  left: calc(1.525rem + 50vw);
+  top: 20px;
+
+  @include media-breakpoint-up(sm) {
+    left: calc(1.525rem + 50vw)
+  }
+
+  @include media-breakpoint-up(md) {
+    left: calc(1.525rem + 45vw);
+    width: 300px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    left: 650px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    left: 700px;
+  }
+
+  img {
+     border-radius: 50%;
+  }
+}
+
+.about__intro,
+.about__subtitle {
+  margin-bottom: 80px;
+}
+
+.about__subtitle + .shapesWrapper__fixedLayer {
+  top: auto;
+}
+
+.about__experience {
+  margin-bottom: 100px;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 2em;
+}
+
+.about__skill {
+  margin-bottom: 50px;
+}
+
+.about__skills {
+  margin-bottom: 50px;
+  list-style: none;
+  padding-left: 0;
+}
