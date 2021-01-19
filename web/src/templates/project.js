@@ -81,7 +81,7 @@ const ProjectTemplate = props => {
         </Container>
       )}
       <Container className={styles.projectDetail__body} TagName="article">
-        <ShapeWrapper container inline clone={<Intro title={project.title} />}>
+        <ShapeWrapper clone={<Intro title={project.title} />}>
           <Shape
             shape="circle"
             className={styles.shapeCircle}

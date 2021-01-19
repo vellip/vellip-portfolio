@@ -40,3 +40,40 @@
     margin-bottom: 0;
   }
 }
+
+.shape--rectangle {
+  width: 200px;
+  height: 40px;
+  left: -20px;
+  top: 40px;
+
+  @include media-breakpoint-up(md) {
+    bottom: 0;
+  }
+}
+
+.shape--circle {
+  width: 100px;
+  height: auto;
+  top: -100px;
+  left: 230px;
+
+  @include media-breakpoint-up(md) {
+    left: 55%;
+  }
+}
+
+.shape--triangle {
+  width: 120px;
+  height: 136px;
+  z-index: -1;
+  right: -40px;
+  top: -40px;
+  transform-origin: 50% 0;
+
+  @include media-breakpoint-up(md) {
+    right: -40px;
+    bottom: -60px;
+    top: auto;
+  }
+}

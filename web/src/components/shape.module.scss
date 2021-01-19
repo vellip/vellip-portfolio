@@ -35,7 +35,6 @@
   z-index: -1;
   top: 0;
   max-width: calc(100% - 40px);
-  width: 100%;
 
   @include media-breakpoint-up(sm) {
     max-width: calc(100% - 120px);
@@ -44,4 +43,8 @@
   @include media-breakpoint-up(md) {
     max-width: calc(100% - 240px);
   }
+}
+
+.shapesWrapper__fixedLayer--container {
+  width: 100%;
 }
