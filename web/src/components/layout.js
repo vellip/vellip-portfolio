@@ -24,7 +24,7 @@ const Header = ({siteTitle}) => (
           </Link>
         </li>
         {links.map((item, index) => (
-          <li className={hStyles.header__listItem}>
+          <li key={item.href} className={hStyles.header__listItem}>
             <Link
               to={item.href}
               className={hStyles.header__link}

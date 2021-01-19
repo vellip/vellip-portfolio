@@ -87,7 +87,7 @@ const ProjectsPage = ({data}) => {
         <div className="row">
           {projects &&
             projects.map(project => (
-              <div className="col-lg-6">
+              <div className="col-lg-6" key={project.id}>
                 <ProjectTeaser project={project} gridStyle={true} />
               </div>
             ))}

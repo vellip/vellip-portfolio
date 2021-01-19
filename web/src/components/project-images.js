@@ -7,7 +7,7 @@ import {cn} from '../lib/helpers'
 const ProjectImages = ({images}) => (
   <div className={cn('row', styles.projectImages)}>
     {images.map(image => (
-      <div className="col-sm-6">
+      <div className="col-sm-6" key={image._key}>
         <Figure
           node={image}
           figureClassName={styles.projectImages__figure}

@@ -13,10 +13,10 @@ const FactList = ({facts}) => (
         item.value
       )
       return (
-        <>
+        <React.Fragment key={item.title}>
           <dt className={styles.factList__term}>{item.title}</dt>
           <dd className={styles.factList__fact}>{value}</dd>
-        </>
+        </React.Fragment>
       )
     })}
   </dl>

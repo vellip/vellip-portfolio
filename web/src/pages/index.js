@@ -127,7 +127,9 @@ const IndexPage = props => {
         <Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />
       </Container>
       {projectNodes &&
-        projectNodes.map((item, index) => <ProjectTeaser align={index % 2 === 0 ? 'left' : 'right'} project={item} />)}
+        projectNodes.map((item, index) => (
+          <ProjectTeaser key={item.id} align={index % 2 === 0 ? 'left' : 'right'} project={item} />
+        ))}
     </Layout>
   )
 }
