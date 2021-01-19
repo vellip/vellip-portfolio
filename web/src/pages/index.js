@@ -71,12 +71,6 @@ const IndexPage = props => {
     )
   }
 
-  useEffect(() => {
-    return () => {
-      parallax.remove()
-    }
-  }, [])
-
   const site = (data || {}).site
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)

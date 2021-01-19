@@ -61,12 +61,6 @@ export const query = graphql`
 const ProjectsPage = ({data}) => {
   const projects = data?.projects?.edges?.length && mapEdgesToNodes(data.projects)
 
-  useEffect(() => {
-    return () => {
-      parallax.remove()
-    }
-  }, [])
-
   return (
     <Layout>
       <Container>

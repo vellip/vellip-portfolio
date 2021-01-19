@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {graphql} from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
@@ -11,6 +11,8 @@ import FactList from '../components/fact-list'
 import Intro from '../components/intro'
 import {cn} from '../lib/helpers'
 import ProjectImages from '../components/project-images'
+import {Shape, ShapeWrapper} from '../components/shape'
+import parallax from '../lib/parallax'
 
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {
@@ -67,7 +69,7 @@ export const query = graphql`
 const ProjectTemplate = props => {
   const {data, errors} = props
   const project = data && data.project
-  console.log(project)
+
   return (
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
@@ -79,6 +81,27 @@ const ProjectTemplate = props => {
         </Container>
       )}
       <Container className={styles.projectDetail__body} TagName="article">
+        <ShapeWrapper container inline clone={<Intro title={project.title} />}>
+          <Shape
+            shape="circle"
+            className={styles.shapeCircle}
+            ref={parallax.init([{speed: 13, value: 'translateY(-%dpx)'}, {speed: 8, value: 'translateX(-%dpx)'}])}
+          />
+          <Shape
+            className={styles.shapeTriangle}
+            shape="triangle"
+            ref={parallax.init([{speed: 20, value: 'translateY(-%dpx)'}])}
+          />
+          <Shape
+            shape="rectangle"
+            className={styles.shapeRectangle}
+            ref={parallax.init([
+              {speed: 13, value: 'translateY(%dpx)', delay: 60},
+              {speed: 15, value: 'translateX(-%dpx)', delay: 60},
+              {speed: 3, value: 'rotate(-%ddeg)', end: 40},
+            ])}
+          />
+        </ShapeWrapper>
         <Intro title={project.title} />
         <div className={cn('row', styles.projectDetail__intro)}>
           <div className="offset-lg-1 col-lg-4 order-md-first col-md-6">

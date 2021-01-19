@@ -5,3 +5,8 @@
  */
 
 // You can delete this file if you're not using it
+const parallax = require('./src/lib/parallax')
+
+exports.onPreRouteUpdate = () => {
+  parallax.default.remove()
+}
