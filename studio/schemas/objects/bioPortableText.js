@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default {
   name: 'bioPortableText',
   type: 'array',
@@ -12,7 +14,12 @@ export default {
         decorators: [
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
-          {title: 'Code', value: 'code'}
+          {title: 'Code', value: 'code'},
+          {
+            title: 'Muted',
+            value: 'muted',
+            blockEditor: {icon: () => 'M', render: props => <span className="muted">{props.children}</span>},
+          },
         ],
         annotations: [
           {
@@ -23,12 +30,12 @@ export default {
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url'
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]
+                type: 'url',
+              },
+            ],
+          },
+        ],
+      },
+    },
+  ],
 }
