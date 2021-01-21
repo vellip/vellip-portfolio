@@ -10,7 +10,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.vellip.de`,
+    siteUrl: `https://www.vellip.berlin`,
   },
   plugins: [
     'gatsby-plugin-postcss',

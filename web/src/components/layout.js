@@ -25,14 +25,15 @@ const Header = ({siteTitle}) => (
         </li>
         {links.map((item, index) => (
           <li key={item.href} className={hStyles.header__listItem}>
-            <Link
-              to={item.href}
-              className={hStyles.header__link}
-              target={item.target || '_self'}
-              activeClassName={hStyles.header__linkActive}
-            >
-              {item.label}
-            </Link>
+            {item.target ? (
+              <a href={item.href} className={hStyles.header__link} target={item.target} rel="noreferrer">
+                {item.label}
+              </a>
+            ) : (
+              <Link to={item.href} className={hStyles.header__link} activeClassName={hStyles.header__linkActive}>
+                {item.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>
@@ -62,23 +63,23 @@ const Footer = () => (
         <nav>
           <ul className={fStyles.footer__list}>
             <li>
-              <a href="https://medium.com/@vellip" target="_blank">
-                <FontAwesomeIcon icon={faMediumM} aria-label="Medium Profil" />
+              <a href="https://medium.com/@vellip" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon icon={faMediumM} aria-label="Medium Profil" title="Medium - vellip" />
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/vellip_" target="_blank">
-                <FontAwesomeIcon icon={faTwitter} aria-label="Twitter Profil" />
+              <a href="https://twitter.com/vellip_" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon icon={faTwitter} aria-label="Twitter Profil" title="Twitter - _vellip" />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/philipp-veller-webdev/" target="_blank">
-                <FontAwesomeIcon icon={faLinkedinIn} aria-label="LinkedIn Profil" />
+              <a href="https://www.linkedin.com/in/philipp-veller-webdev/" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon icon={faLinkedinIn} aria-label="LinkedIn Profil" title="LinkedIn - Philipp Veller" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/vellip" target="_blank">
-                <FontAwesomeIcon icon={faGithub} aria-label="Github Profil" />
+              <a href="https://github.com/vellip" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon icon={faGithub} aria-label="Github Profil" title="Github - vellip" />
               </a>
             </li>
           </ul>
