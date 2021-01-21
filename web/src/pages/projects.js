@@ -9,6 +9,7 @@ import {mapEdgesToNodes} from '../lib/helpers'
 import {Shape, ShapeWrapper} from '../components/shape'
 import styles from './projects.module.scss'
 import parallax from '../lib/parallax'
+import SEO from '../components/seo'
 
 export const query = graphql`
   query ProjectsPageQuery {
@@ -58,6 +59,7 @@ const ProjectsPage = ({data}) => {
 
   return (
     <LayoutContainer>
+      <SEO title="Entwickelte Webseiten und WebApps" />
       <Container>
         <Shape
           shape="circle"

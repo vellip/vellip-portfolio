@@ -83,7 +83,7 @@ const Footer = () => (
             </li>
           </ul>
           <Link to="/page/impressum-datenschutz">Impressum & Datenschutz</Link>
-          <p className={fStyles.footer__valueSmall}>
+          <address className={fStyles.footer__valueSmall}>
             <span itemProp="name">Philipp Veller</span> <br />
             <span itemProp="jobTitle">Webentwickler</span> <br />
             <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
@@ -91,7 +91,7 @@ const Footer = () => (
               <span itemProp="postalCode">13189</span>&nbsp;
               <span itemProp="addressLocality">Berlin</span>
             </span>
-          </p>
+          </address>
         </nav>
       </div>
     </Container>

@@ -11,6 +11,8 @@ import 'gatsby-source-sanity/fragments/imageFragments'
 import BlockText from '../components/block-text'
 import Figure from '../components/figure'
 import {cn} from '../lib/helpers'
+import SEO from '../components/seo'
+import Layout from '../components/layout'
 
 export const query = graphql`
   query AboutPage {
@@ -45,6 +47,7 @@ const AboutPage = ({data}) => {
 
   return (
     <LayoutContainer>
+      <SEO title="Über Philipp Veller" />
       <Container>
         <ShapeWrapper container clone={<Intro title={page.title} />}>
           <Shape
