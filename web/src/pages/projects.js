@@ -1,6 +1,6 @@
 import '../global.scss'
 import React, {useEffect} from 'react'
-import Layout from '../components/layout'
+import LayoutContainer from '../containers/layout'
 import {graphql} from 'gatsby'
 import Intro from '../components/intro'
 import Container from '../components/container'
@@ -12,11 +12,6 @@ import parallax from '../lib/parallax'
 
 export const query = graphql`
   query ProjectsPageQuery {
-    site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
-      title
-      description
-      keywords
-    }
     projects: allSanityProject(
       limit: 6
       sort: {fields: [publishedAt], order: DESC}
@@ -62,7 +57,7 @@ const ProjectsPage = ({data}) => {
   const projects = data?.projects?.edges?.length && mapEdgesToNodes(data.projects)
 
   return (
-    <Layout>
+    <LayoutContainer>
       <Container>
         <Shape
           shape="circle"
@@ -87,7 +82,7 @@ const ProjectsPage = ({data}) => {
             ))}
         </div>
       </Container>
-    </Layout>
+    </LayoutContainer>
   )
 }
 

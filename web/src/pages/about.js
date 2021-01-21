@@ -1,6 +1,6 @@
 import '../global.scss'
 import React from 'react'
-import Layout from '../components/layout'
+import LayoutContainer from '../containers/layout'
 import {graphql} from 'gatsby'
 import Intro from '../components/intro'
 import Container from '../components/container'
@@ -42,9 +42,9 @@ export const query = graphql`
 
 const AboutPage = ({data}) => {
   const page = data.sanityAboutPage || {}
-  console.log(page)
+
   return (
-    <Layout>
+    <LayoutContainer>
       <Container>
         <ShapeWrapper container clone={<Intro title={page.title} />}>
           <Shape
@@ -101,7 +101,7 @@ const AboutPage = ({data}) => {
           </div>
         </div>
       </Container>
-    </Layout>
+    </LayoutContainer>
   )
 }
 

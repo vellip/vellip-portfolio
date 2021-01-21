@@ -1,11 +1,11 @@
 import '../global.scss'
-import React, {useEffect} from 'react'
+import React from 'react'
 import {graphql} from 'gatsby'
 import {mapEdgesToNodes, filterOutDocsWithoutSlugs, filterOutDocsPublishedInTheFuture} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
-import Layout from '../containers/layout'
+import LayoutContainer from '../containers/layout'
 import Intro from '../components/intro'
 import ProjectTeaser from '../components/project-teaser'
 import {Shape, ShapeWrapper} from '../components/shape'
@@ -14,11 +14,6 @@ import parallax from '../lib/parallax'
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
-      title
-      description
-      keywords
-    }
     projects: allSanityProject(
       limit: 6
       sort: {fields: [publishedAt], order: DESC}
@@ -65,9 +60,9 @@ const IndexPage = props => {
 
   if (errors) {
     return (
-      <Layout>
+      <LayoutContainer>
         <GraphQLErrorList errors={errors} />
-      </Layout>
+      </LayoutContainer>
     )
   }
 
@@ -84,8 +79,7 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout>
-      <SEO title={site.title} description={site.description} keywords={site.keywords} />
+    <LayoutContainer>
       <Container>
         <ShapeWrapper container clone={<Intro pre="Hallo!" title="Ich bin Philipp, <br/> Webentwickler aus Berlin" />}>
           <Shape
@@ -124,7 +118,7 @@ const IndexPage = props => {
         projectNodes.map((item, index) => (
           <ProjectTeaser key={item.id} align={index % 2 === 0 ? 'left' : 'right'} project={item} />
         ))}
-    </Layout>
+    </LayoutContainer>
   )
 }
 
