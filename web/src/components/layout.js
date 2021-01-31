@@ -14,13 +14,13 @@ const links = [
   {label: 'Blog', href: 'https://medium.com/@vellip', target: '_blank'},
 ]
 
-const Header = ({siteTitle}) => (
+const Header = () => (
   <header className={hStyles.header}>
     <nav>
       <ul className={hStyles.header__list}>
         <li className={cn(hStyles.header__listItem, hStyles.header__listItemHome)}>
           <Link to="/" className={hStyles.header__link} activeClassName={hStyles.header__linkActive}>
-            {siteTitle}
+            vellip
           </Link>
         </li>
         {links.map((item, index) => (
@@ -99,9 +99,9 @@ const Footer = () => (
   </footer>
 )
 
-const Layout = ({children, siteTitle}) => (
+const Layout = ({children}) => (
   <>
-    <Header siteTitle={siteTitle} />
+    <Header />
     <main className={styles.content}>{children}</main>
     <Footer />
   </>
