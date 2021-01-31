@@ -83,7 +83,7 @@ const Footer = () => (
               </a>
             </li>
           </ul>
-          <Link to="/page/impressum-datenschutz">Impressum & Datenschutz</Link>
+          <Link to="/impressum-datenschutz">Impressum & Datenschutz</Link>
           <address className={fStyles.footer__valueSmall}>
             <span itemProp="name">Philipp Veller</span> <br />
             <span itemProp="jobTitle">Webentwickler</span> <br />
