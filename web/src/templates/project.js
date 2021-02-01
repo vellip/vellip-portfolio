@@ -113,7 +113,7 @@ const ProjectTemplate = props => {
         </div>
         <ProjectImages images={project.images} />
         <div className="row">
-          <div className="offset-lg-1 col-lg-7">
+          <div className="offset-lg-3 col-lg-6">
             <BlockContent blocks={project._rawBody} />
           </div>
         </div>
