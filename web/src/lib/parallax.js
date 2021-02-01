@@ -1,7 +1,7 @@
-import {format, isFuture} from 'date-fns'
-
 class ParallaxService {
-  scrollHandlers = []
+  constructor() {
+    this.scrollHandlers = []
+  }
 
   init() {
     window.addEventListener('scroll', this.scrollHandler.bind(this), false)

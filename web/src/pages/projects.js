@@ -55,7 +55,7 @@ export const query = graphql`
 `
 
 const ProjectsPage = ({data}) => {
-  const projects = data?.projects?.edges?.length && mapEdgesToNodes(data.projects)
+  const projects = data.projects.edges.length && mapEdgesToNodes(data.projects)
 
   return (
     <LayoutContainer>
