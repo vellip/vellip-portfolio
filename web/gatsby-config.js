@@ -43,6 +43,22 @@ module.exports = {
       __key: 'images',
     },
     {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Source Sans Pro',
+              variants: ['400', '600', '700'],
+            },
+          ],
+        },
+        formats: ['woff2'],
+        useMinify: true,
+        usePreload: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-subfont`,
       options: {
         fallback: false,
