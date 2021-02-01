@@ -3,7 +3,7 @@ import Figure from './figure'
 
 const serializers = {
   types: {
-    figure: Figure,
+    figure: props => <Figure {...props} inline />,
   },
   marks: {
     muted: props => <span className="muted">{props.children}</span>,
