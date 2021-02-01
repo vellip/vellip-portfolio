@@ -1,0 +1,11 @@
+[[redirects]]
+    from = "https://vellip.de"
+    to = "https://vellip.berlin"
+    force = true
+    status = 302
+
+[[redirects]]
+    from = "https://vellip-portfolio.netlify.app"
+    to = "https://vellip.berlin"
+    force = true
+    status = 302
