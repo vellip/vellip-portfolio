@@ -1,4 +1,9 @@
 [[redirects]]
+    from = "https://vellip.de/defaultsite"
+    to = "https://vellip.berlin/"
+    force = true
+
+[[redirects]]
     from = "https://vellip.de/*"
     to = "https://vellip.berlin/:splat"
     force = true
